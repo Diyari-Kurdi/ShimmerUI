@@ -11,14 +11,22 @@
 	<Authors>Diyari</Authors>
 	<Description>A WPF control that displays a shimmer loading effect.</Description>
 	<PackageTags>WPF;Shimmer;Loading;UI;Control</PackageTags>
-	<Copyright>Copyright © 2025 Diyari</Copyright>
+	<Copyright>Copyright © 2025 Diyari Ismael</Copyright>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageIcon>icon.png</PackageIcon>
 	<RepositoryUrl>https://github.com/Diyari-Kurdi/ShimmerUI</RepositoryUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
 	<ItemGroup>
 		<None Include="icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 	
 </Project>
