@@ -1,0 +1,264 @@
+﻿<Window
+    x:Class="WPF_Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shimmer="clr-namespace:Shimmer.Wpf;assembly=Shimmer.Wpf"
+    Title="MainWindow"
+    Width="1100"
+    Height="800"
+    d:DataContext="{d:DesignInstance local:MainViewModel}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--  Left Group  -->
+            <GroupBox Padding="10" Header="Shimmer Group: Left">
+                <StackPanel Margin="0,0,10,0" HorizontalAlignment="Center">
+                    <shimmer:ShimmerControl
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center"
+                        AutoStart="True"
+                        CornerRadius="0"
+                        GroupName="LeftGroup"
+                        ShimmerDuration="0:0:0.4">
+                        <TextBlock FontSize="32" Text="Left Group" />
+                    </shimmer:ShimmerControl>
+                    <shimmer:ShimmerControl
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        AutoStart="True"
+                        GroupName="LeftGroup"
+                        ShimmerDuration="0:0:0.8">
+                        <TextBlock
+                            FontSize="20"
+                            Text="This is a sample text that will shimmer."
+                            TextWrapping="Wrap" />
+                    </shimmer:ShimmerControl>
+                    <StackPanel HorizontalAlignment="Center">
+                        <shimmer:ShimmerControl
+                            Margin="0,0,0,10"
+                            AutoStart="True"
+                            DesignModeShimmering="True"
+                            GroupName="LeftGroup">
+                            <Border
+                                Width="200"
+                                Height="200"
+                                Background="Beige"
+                                CornerRadius="100" />
+                        </shimmer:ShimmerControl>
+                        <shimmer:ShimmerControl
+                            Width="125"
+                            Height="10"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Center"
+                            AutoStart="True"
+                            CornerRadius="6"
+                            GroupName="LeftGroup" />
+                        <shimmer:ShimmerControl
+                            Width="80"
+                            Height="10"
+                            HorizontalAlignment="Center"
+                            AutoStart="True"
+                            CornerRadius="6"
+                            GroupName="LeftGroup" />
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox>
+
+            <!--  Center Column - Dark Theme  -->
+            <GroupBox
+                Grid.Column="1"
+                Padding="10"
+                Header="Dark Theme Shimmer">
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Stretch"
+                    Background="#1e1e1e"
+                    TextElement.Foreground="White">
+                    <shimmer:ShimmerControl
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center"
+                        AutoStart="True"
+                        Background="#222222"
+                        CornerRadius="0"
+                        ShimmerColor="#55FFFFFF"
+                        ShimmerWidth="40">
+                        <TextBlock FontSize="32" Text="Header Sample" />
+                    </shimmer:ShimmerControl>
+                    <shimmer:ShimmerControl
+                        Margin="10,0,10,10"
+                        HorizontalAlignment="Center"
+                        AutoStart="True"
+                        Background="#222222"
+                        CornerRadius="15"
+                        ShimmerColor="#55FFFFFF">
+                        <TextBlock
+                            FontSize="20"
+                            Text="This is a sample text that will shimmer."
+                            TextWrapping="Wrap" />
+                    </shimmer:ShimmerControl>
+                    <StackPanel HorizontalAlignment="Center">
+                        <shimmer:ShimmerControl
+                            Width="200"
+                            Height="200"
+                            Margin="0,0,0,10"
+                            AutoStart="True"
+                            Background="#222222"
+                            CornerRadius="100"
+                            ShimmerColor="#55FFFFFF" />
+                        <shimmer:ShimmerControl
+                            Width="125"
+                            Height="10"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Center"
+                            AutoStart="True"
+                            Background="#222222"
+                            CornerRadius="6"
+                            ShimmerColor="#55FFFFFF" />
+                        <shimmer:ShimmerControl
+                            Width="80"
+                            Height="10"
+                            HorizontalAlignment="Center"
+                            AutoStart="True"
+                            Background="#222222"
+                            CornerRadius="6"
+                            ShimmerColor="#55FFFFFF" />
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox>
+
+            <!--  Right Column - ViewModel Binding  -->
+            <GroupBox
+                Grid.Column="2"
+                Padding="10"
+                Header="ViewModel Binding">
+                <StackPanel
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center">
+                    <shimmer:ShimmerControl
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        CornerRadius="8"
+                        IsShimmering="{Binding IsShimming}">
+                        <TextBlock FontSize="32" Text="Binding" />
+                    </shimmer:ShimmerControl>
+                    <shimmer:ShimmerControl
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        CornerRadius="25,0,25,0"
+                        IsShimmering="{Binding IsShimming}">
+                        <TextBlock
+                            FontSize="20"
+                            Text="This is a sample text that will shimmer."
+                            TextWrapping="Wrap" />
+                    </shimmer:ShimmerControl>
+                    <StackPanel HorizontalAlignment="Center">
+                        <shimmer:ShimmerControl
+                            Width="200"
+                            Height="200"
+                            Margin="0,0,0,10"
+                            CornerRadius="100"
+                            IsShimmering="{Binding IsShimming}"
+                            ShimmerDuration="0:0:2" />
+                        <shimmer:ShimmerControl
+                            Width="125"
+                            Height="10"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Center"
+                            CornerRadius="6"
+                            IsShimmering="{Binding IsShimming}" />
+                        <shimmer:ShimmerControl
+                            Width="80"
+                            Height="10"
+                            HorizontalAlignment="Center"
+                            CornerRadius="6"
+                            IsShimmering="{Binding IsShimming}" />
+
+                    </StackPanel>
+                    <ToggleButton
+                        Height="30"
+                        Margin="0,20,0,0"
+                        Padding="10,0"
+                        HorizontalAlignment="Center"
+                        Content="Toggle Shimmering"
+                        IsChecked="{Binding IsShimming, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <StackPanel
+            Grid.Row="1"
+            Height="30"
+            Margin="0,10"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                x:Name="StartLeftGroupButton"
+                Padding="10,0"
+                Click="StartLeftGroupButton_Click"
+                Content="Start Left Group" />
+            <Button
+                x:Name="StopLeftGroupButton"
+                Margin="10,0,0,0"
+                Padding="10,0"
+                Click="StopLeftGroupButton_Click"
+                Content="Stop Left Group" />
+            <Button
+                x:Name="ToggleLeftGroupButton"
+                Margin="10,0,20,0"
+                Padding="10,0"
+                Click="ToggleLeftGroupButton_Click"
+                Content="Toggle Left Group" />
+
+            <Button
+                x:Name="StartAllButton"
+                Margin="20,0,0,0"
+                Padding="10,0"
+                Click="StartAllButton_Click"
+                Content="Start All" />
+            <Button
+                x:Name="StopAllButton"
+                Margin="10,0,0,0"
+                Padding="10,0"
+                Click="StopAllButton_Click"
+                Content="Stop All" />
+            <Button
+                x:Name="ToggleAllButton"
+                Margin="10,0,0,0"
+                Padding="10,0"
+                Click="ToggleAllButton_Click"
+                Content="Toggle All" />
+        </StackPanel>
+
+        <ScrollViewer
+            x:Name="EventsScrollViewer"
+            Grid.Row="2"
+            Height="100">
+            <ItemsControl x:Name="EventsListView">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net8.0-windows;net9.0-windows;</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Shimmer.Wpf</Title>
+	<PackageId>Shimmer.Wpf</PackageId>
+	<Authors>Diyari</Authors>
+	<Description>A WPF control that displays a shimmer loading effect.</Description>
+	<PackageTags>WPF;Shimmer;Loading;UI;Control</PackageTags>
+	<Copyright>Copyright © 2025 Diyari</Copyright>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	
+</Project>
