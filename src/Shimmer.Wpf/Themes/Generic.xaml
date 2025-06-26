@@ -31,6 +31,7 @@
                             x:Name="ShimmerBorder"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding CornerRadius}"
+                            IsHitTestVisible="False"
                             Opacity="0"
                             Visibility="Visible">
                             <Border.Clip>
