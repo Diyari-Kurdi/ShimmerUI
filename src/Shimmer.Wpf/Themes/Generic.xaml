@@ -7,8 +7,10 @@
     <converters:BorderClipConverter x:Key="BorderClipConverter" />
 
     <Style TargetType="{x:Type local:ShimmerControl}">
-        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="ShimmerColor" Value="White" />
         <Setter Property="Background" Value="#f6f6f6" />
         <Setter Property="ShimmerOpacity" Value="0.6" />
@@ -29,6 +31,8 @@
 
                         <Border
                             x:Name="ShimmerBorder"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             IsHitTestVisible="False"
@@ -45,6 +49,8 @@
                             <Rectangle
                                 x:Name="ShimmerRectangle"
                                 Width="{TemplateBinding ShimmerWidth}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Opacity="{TemplateBinding ShimmerOpacity}">
                                 <Rectangle.RenderTransform>
                                     <TranslateTransform X="-200" />
